@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Canvas</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="./styleBar.css">
+</head>
+<body>
+	<nav class="full">
+        <div class="underline"></div>
+        <div class="underline"></div>
+        <div class="underline"></div>
+        <a href="index.html" onClick="ul(0)">Image Editor</a><a href="canvas.html" onClick="ul(1)">Canvas</a><a onClick="ul(2)">AI Image Generator</a>
+    </nav>
+	<button onclick='toggleMode(modes.pan)'>Toggle Pan</button>
+	<button onclick='toggleMode(modes.drawing)'>Toggle Drawing</button>
+	<input id='colorPicker' value="#000000" data-jscolor="">
+	<!--<button class="choose-img">Choose Image</button>-->
+	<button onclick='clearCanvas(canvas)'>Clear</button>
+	<canvas id="canvas"></canvas>
+
+	<div id="objectButtonWrapper">
+		<p id="objectsTitle">Objects</p>
+		<div id="objectButtons">
+			<button onclick="createRect(canvas)">Rect</button>
+			<button onclick="createCirc(canvas)">Circ</button>
+		</div>
+	</div>
+	<button onclick="exportImage(canvas)">Export</button>
+	<input id="myImg" type="file" accept="image/*">
+
+	<script src="./fabric.min.js"></script>
+	<script src="canvas.js"></script>
+	<script src="jscolor.js"></script>
+</body>
